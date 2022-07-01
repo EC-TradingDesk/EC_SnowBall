@@ -70,7 +70,7 @@ if __name__ == '__main__':
     # 邮件正文
     body_content = """Dear, \n\n这是今天的雪球持仓情况，请查收！\n\nKind regards, \nZack"""
     annex_file = r'雪球簿记交易对冲参数_v5.xlsx'
-    annex_name = "雪球每日情况{}.xlsx".format(datetime.datetime.now().strftime('%Y-%m-%d'))
+    annex_name = "SnowBall_Daily_Valuation_{}.xlsx".format(datetime.datetime.now().strftime('%Y-%m-%d'))
     message = create_email(sender_name=sender_name,receiver_name=receiver_name,email_Subject=subject_content, \
                  email_text=body_content,annex_file=annex_file,annex_name=annex_name)
     send_email(sender=sender,password=mail_license,receiver=receiver,msg=message)
