@@ -62,21 +62,17 @@ if __name__ == '__main__':
     # 邮箱授权码,注意这里不是邮箱密码！！
     mail_license = "yjtvueymncazbajd"
     #收件人邮箱（前面的昵称一定要用英文的）
-    receiver_name = "kangma1012@163.com;115053043@qq.com;zz2705@columbia.edu;541211968@qq.com"
-    receiver = "kangma1012@163.com,115053043@qq.com,zz2705@columbia.edu,541211968@qq.com".split(',')
-#     receiver_name = "hao<115053043@qq.com>,zzq<kangma1012@163.com>"  #
+    receiver_name = "hao<115053043@qq.com>;fuchen<gamma_life@163.com>;zzq<541211968@qq.com>;yechao<yechaolu2018@sina.com>;linshan<448330966@qq.com>;msy<ma_syy@163.com>"
+    receiver = ",115053043@qq.com,gamma_life@163.com,541211968@qq.com,yechaolu2018@sina.com,448330966@qq.com".split(',')
     # 邮件主题
     subject_content = """雪球每日持仓情况{}""".format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M'))
     # 邮件正文
-    body_content = """Dear, \n\n这是今天的雪球持仓情况，请查收！\n\nKind regards, \nZack"""
+    body_content = """Dear, \n\n这是今天的雪球持仓情况，请查收！数据运行时间点为{}\n\nKind regards, \nZack""".format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M'))
     annex_file = r'雪球簿记交易对冲参数_v5.xlsx'
     annex_name = "SnowBall_Daily_Valuation_{}.xlsx".format(datetime.datetime.now().strftime('%Y-%m-%d'))
     message = create_email(sender_name=sender_name,receiver_name=receiver_name,email_Subject=subject_content, \
                  email_text=body_content,annex_file=annex_file,annex_name=annex_name)
     send_email(sender=sender,password=mail_license,receiver=receiver,msg=message)
-
-
-# In[ ]:
 
 
 
